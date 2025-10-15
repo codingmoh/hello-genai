@@ -10,6 +10,10 @@ services:
       - LOG_LEVEL=INFO
     x-genai-models:
       - llama
+    models:
+      llama:
+        endpoint_var: LLAMA_URL
+        model_var: LLAMA_MODEL
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 30s
